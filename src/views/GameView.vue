@@ -1,8 +1,8 @@
 <template>
   <div class="gameView">
     <GameHeader :header="header"/>
-    <TicTacToe :squares="squares" :player="player"/>
-    <router-link :to="{name:GameView}">
+    <TicTacToe :squares="squares" :player="player" @updateSquarePlayer="updateSquarePlayer"/>
+    <router-link :to="{name: 'game'}">
       <button v-show="complete" class="gameView_reset">Reset</button>
     </router-link>
   </div>
@@ -25,7 +25,14 @@ import TicTacToe from '../components/TicTacToe.vue'
         player: "x",
         complete: true
       }
-    }
+    },
+    methods:{
+      updateSquarePlayer(squares){
+        this.squares = squares
+        this.player = this.player == 'x' ? 'o' : 'x'
+        this.header = `Player ${this.player.toUpperCase()}'s turn`
+      },
+    },
   }
 </script>
 

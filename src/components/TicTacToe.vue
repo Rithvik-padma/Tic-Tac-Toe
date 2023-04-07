@@ -1,8 +1,8 @@
 <template>
     <div class="gameView_game">
-        <button class="gameView_box" v-for="(square, index) in squares" :key="index">
-            <i v-if="square == 'x'" class="tic-item"></i>
-            <i v-else-if="square == 'o'" class="tic-item"></i>
+        <button class="gameView_box" @click="addItem(index)" v-for="(square, index) in squares" :key="index">
+            <i v-if="square == 'x'" class="tic-item x-square">x</i>
+            <i v-else-if="square == 'o'" class="tic-item o-square" >o</i>
         </button>
     </div>
 </template>
@@ -18,7 +18,14 @@
         props: {
             squares: Array,
             player: String
-        }    
+        },   
+        methods: {
+            addItem(index){
+                const squares = this.squares.slice()
+                squares[index] = this.player
+                this.$emit('updateSquarePlayer', squares)
+            },
+        },
     }
 </script>
 
