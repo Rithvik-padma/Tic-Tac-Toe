@@ -1,6 +1,8 @@
 $color = lightblue
 $hover_color = whitesmoke
 $ticColor = black
+$o = green
+$x = red
 
 .gameView
     background-color $color
@@ -29,6 +31,7 @@ $ticColor = black
         &:hover
             cursor pointer
             background-color $hover_color
+            transform scale(0.975)
     &_reset
         border none
         padding 10px 20px
@@ -47,7 +50,21 @@ $ticColor = black
     display flex
     justify-content center
     align-items center
-    font-size 30px
-    font-weight 900
-    font-family 'Poppins'
+    font-size 2rem
+    font-weight 700
+    font-family 'Lato'
+    font-style normal
     color $ticColor
+    vertical-align middle
+    line-height 1
+
+.o-square
+    color $o
+    
+.x-square
+    color $x
+    font-size 29px
+
+.disabled
+    pointer-events none
+    opacity 0.8
