@@ -3,7 +3,7 @@
     <GameHeader :header="header"/>
     <TicTacToe :class="{'disabled' : gameDisabled}" :squares="squares" :player="player" @updateSquarePlayer="updateSquarePlayer" @updateWinner="updateWinner"/>
     <router-link :to="{name: 'game'}">
-      <button v-if="complete" class="gameView_reset">Reset</button>
+      <button v-if="complete" class="gameView_reset" @click="resetGame">Reset</button>
     </router-link>
   </div>
 </template>
@@ -59,6 +59,9 @@ import TicTacToe from '../components/TicTacToe.vue'
         this.header = `Player ${winner.toUpperCase()} is the winner!`
         this.complete = true
       },
+      resetGame(){
+        this.$router.go()
+      }
     },
   }
 </script>
