@@ -6,7 +6,7 @@
       <img class="home_image" alt="tictactoe" src="../assets/tic-tac-toe.svg" />
     </div>
     <router-link :to="{name: 'game'}">
-      <button class="home_play">Play</button>
+      <button aria-label="play" class="home_play">Play</button>
     </router-link>
   </div>
 </template>
