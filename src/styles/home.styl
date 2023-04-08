@@ -12,8 +12,8 @@ $color = lightblue
     &_title
         color white
         font-family 'Chivo Mono'
-        font-size 35px
-        font-weight 900
+        font-size 32px
+        font-weight 800
         margin-top 50px
     &_head
         color white
@@ -44,5 +44,16 @@ $color = lightblue
         &:hover
             box-shadow 0 0 8px 1px whitesmoke
             cursor pointer
-         
-      
+
+@media screen and (max-width: 350px)
+    .home
+        &_title
+            font-size 22px
+        &_head
+            font-size 25px
+        &_play
+            transform scale(0.85)
+        &_wrap
+            margin-bottom 50px
+            margin-top 10px
+        

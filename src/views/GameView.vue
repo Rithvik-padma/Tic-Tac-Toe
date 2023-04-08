@@ -34,7 +34,8 @@ import TicTacToe from '../components/TicTacToe.vue'
                     [0,4,8],
                     [2,4,6]
                 ],
-        gameDisabled: false
+        gameDisabled: false,
+        boxes: 0
       }
     },
     methods:{
@@ -47,16 +48,24 @@ import TicTacToe from '../components/TicTacToe.vue'
             this.updateWinner(squares[a])
             break
           }
+          else if(this.boxes === 9){
+            this.updateTie()
+          }
         }
       },
       updateSquarePlayer(squares){
         this.squares = squares
         this.player = this.player == 'x' ? 'o' : 'x'
         this.header = `Player ${this.player.toUpperCase()}'s turn`
+        this.boxes++
         this.winnerCheck()
       },
       updateWinner(winner){
         this.header = `Player ${winner.toUpperCase()} is the winner!`
+        this.complete = true
+      },
+      updateTie(){
+        this.header = "It's a tie!"
         this.complete = true
       },
       resetGame(){
