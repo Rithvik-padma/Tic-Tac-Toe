@@ -3,7 +3,7 @@
     <GameHeader :header="header"/>
     <TicTacToe :class="{'disabled' : gameDisabled}" :squares="squares" :player="player" @updateSquarePlayer="updateSquarePlayer" @updateWinner="updateWinner"/>
     <router-link :to="{name: 'game'}">
-      <button v-if="complete" class="gameView_reset" @click="resetGame">Reset</button>
+      <button aria-label="reset" v-if="complete" class="gameView_reset" @click="resetGame">Reset</button>
     </router-link>
   </div>
 </template>
