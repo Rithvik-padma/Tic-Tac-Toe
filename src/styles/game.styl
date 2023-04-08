@@ -14,10 +14,11 @@ $x = red
     gap 110px
     &_title
         color white
-        font-family 'Chivo Mono'
-        font-size 35px
-        font-weight 900
+        font-family 'Chivo mono'
+        font-size 32px
+        font-weight 700
         margin-top 50px
+        text-align center
     &_game
         display grid
         grid-template-columns auto auto auto
@@ -68,3 +69,12 @@ $x = red
 .disabled
     pointer-events none
     opacity 0.8
+@media screen and (max-width: 350px)
+    .gameView
+        &_title
+            font-size 22px
+        &_game
+            transform scale(0.8)
+        &_reset
+            transform scale(0.85)
+    
