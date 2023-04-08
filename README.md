@@ -1,5 +1,9 @@
 # Tic Tac Toe
+This is a TicTacToe game (web app) which is created using modern frontend technologies like - Vue, Vue-router, Stylus, Postcss.   
 
+Play the game - **[TicTacToe](https://tictactoe-g.vercel.app/)**   
+
+Follow the steps below to run it locally on your system.
 ## Project setup
 ```
 npm install
